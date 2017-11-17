@@ -1,0 +1,218 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+
+*,
+*::before,
+*::after{
+      box-sizing: inherit;
+}
+  
+
+body{
+    background-color: #fff;
+    color: #313841;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4rem;
+    height: 100%;
+}
+
+p{
+    margin: 0;
+    padding: 1.4rem 2rem;
+}
+
+#full_player{
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.21);
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+    height: 400px;
+    width: 700px;
+}
+
+.half{
+    width: 50%;
+}
+
+.control_panel{
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+audio{
+    width: 100%;
+    height: 100px;
+}
+
+ol{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    display: block;
+    cursor: pointer;
+    list-style: inside;
+    width: 100%;
+    display: block;
+    color: #313841;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+.current_li{
+    background-color: #abe7e5;
+}
+
+ol li:nth-child(odd){
+    background-color: #eaeaea;
+}
+
+ol li:hover{
+    background-color: #abe7e5;
+}
+
+ol li a{
+    width: 100%;
+    display: block;
+    color: #313841;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+#playlist li{
+    display: block;
+    padding: 1rem;
+    width: 100%;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 135px;
+    width: 100%;
+}
+
+h4{
+    width: 100%;
+}
+
+.controls_plays{
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+}
+
+button{
+    border: 0;
+}
+
+.openDialog{
+    background-image: url(../assets/plus.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    padding: 0 2rem;
+    height: 50px;
+    transition: all 0.2s;
+}
+
+#plays_btn, #play_btn, #prev_btn, #next_btn, #pause_btn{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    padding: 0 2rem;
+    height: 50px;
+    transition: all 0.2s;
+}
+
+#prev_btn{
+    background-image: url(../assets/rewind.svg);
+}
+
+#next_btn{
+    background-image: url(../assets/forward.svg);
+}
+
+#play_btn{
+    background-image: url(../assets/play.svg);
+}
+
+#pause_btn{
+    background-image: url(../assets/pause.svg);
+    display: none;
+}
+
+
+#volume_btn, #shuffle_btn, #tracklist_btn{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    height: 50px;
+    width: 100px;
+    transition: all 0.2s;
+}
+
+#volume_btn{
+    background-image: url(../assets/volume.svg);
+    width: 50px;
+}
+
+#shuffle_btn{
+    background-image: url(../assets/shuffle.svg);
+}
+
+.progressbar_slide, .progressbar_slide_volume{
+    width: 100%;
+    border-radius: 3px;
+    background:#dbdbdb;
+    height: 4px;
+    margin: 2.2rem 1rem;
+}
+
+.progressbar_slide_volume{
+    width: 20%;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.progressbar_range, .progressbar_volume{
+    width: 0;
+    background-image: linear-gradient(to left, #3cd2ce, #4bbad6);
+    height: 4px;
+    position: relative;
+    border-radius: 3px;
+}
+
+.progressbar_circle{
+    border: 1px solid #c3c3c3;
+    border-radius: 50%;
+    background-image: radial-gradient(#3cd2ce 35%, #fff 36%);
+    width: 12px;
+    height: 12px;
+    margin-top: -4px;
+    margin-left: -4px;
+    right: 0;
+    position: absolute;
+}
+
+.dialog {
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.21);
+    display: none;
+    margin: 0px auto;
+    padding: 2rem;
+    position: absolute;
+    width: 300px;
+}
