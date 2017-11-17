@@ -5,7 +5,6 @@ var url = 'http://localhost:8080/';
 var SubmitButton = document.querySelector('#submit');    
 SubmitButton.addEventListener("click", submitClick);
 
-
 const methods = function ( methodType, filtering, callback) {
     const xhr = new XMLHttpRequest();
     xhr.open( methodType, url + filtering );
@@ -32,6 +31,16 @@ const renderCars = function(carsData) {
         table.appendChild(oneCarRow);
     });
         
+    var htmlBrandButtons = document.querySelectorAll('.cars_brand');
+    var buttons = Array.from(htmlBrandButtons);
+    var filteringBrand = '';
+    buttons.forEach(function(element){
+        element.addEventListener('click', function(){
+            filteringBrand =  element.value;
+            getBrandData(element.value);
+            table.innerHTML='';
+        });   
+    });
 }
 
 function submitClick() {

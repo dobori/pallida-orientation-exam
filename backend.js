@@ -38,12 +38,13 @@ app.get("/", function(req, res){
 
 app.get("/search", function(req, res){
     if (!req.query.plate){ 
-      var addToSelect= "";
+        var addToSelect= "";
     } else if (/[^a-zA-Z0-9\-\/]/.test(req.query.plate)) {
-          res.send({ "result": "error", "message": "invalid input" });
+        res.send({ "result": "error", 
+                      "message": "invalid input" });
     } else {
-      addToSelect= "WHERE plate = \'" + req.query.plate + "\'";
-      };
+        addToSelect= "WHERE plate = \'" + req.query.plate + "\'";
+    };
   
     connection.query(`SELECT plate, car_brand, car_model, color, year FROM licence_plates ${addToSelect}`, 
       
