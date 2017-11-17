@@ -3,7 +3,7 @@
 var url = 'http://localhost:8080/';
 
 var SubmitButton = document.querySelector('#submit');    
-SubmitButton.addEventListener("click", submitClick);
+SubmitButton.addEventListener('click', submitClick);
 
 const methods = function ( methodType, filtering, callback) {
     const xhr = new XMLHttpRequest();
