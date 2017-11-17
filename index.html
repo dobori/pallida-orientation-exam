@@ -11,8 +11,21 @@
 </head>
 <body>
     <main>
-        <input type="text">
+        <input type="text" maxlength="7"  placeholder="pl. XYZ-685">
+        <fieldset>
+            <label>
+                <input type="radio" name="kind_of_cars" id="police" value="0">
+            <span>Police cars</span>
+            </label>
+            <label>
+                <input type="radio" name="kind_of_cars" value="0">
+                <span>Diplomatas</span>
+            </label>
+        </div>
+        </fieldset>
+
         <button id="submit">Search</button>
+
         <table>
             <tr>
                 <th>Licence plate</th>

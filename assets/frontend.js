@@ -26,12 +26,14 @@ const getDatas = callback => {
     methods('GET', '', callback);
 }
 
+
 const renderCars = function(carsData) {
+    var neededDatas = carsData.data;
     var table = document.querySelector('table');
 
-    carsData.forEach( car => {
+    neededDatas.forEach( car => {
         let oneCarRow =  document.createElement('tr');
-            oneCarRow.innerHTML = '<td>'+ car.plate + '</td><td>' + car.brand + '</td><td>' + car.car_model + '</td><td>' + car.color + '</td><td>' + car.year + '</td>';
+            oneCarRow.innerHTML = '<td>'+ car.plate + '</td><td>' + car.car_brand + '</td><td>' + car.car_model + '</td><td>' + car.color + '</td><td>' + car.year + '</td>';
             table.appendChild(oneCarRow);
     });
     

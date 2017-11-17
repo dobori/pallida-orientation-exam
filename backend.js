@@ -50,7 +50,9 @@ app.get('/search', function(req, res){
       if(err){
           console.log(err);
       }
-          res.send(carsData); 
+          res.send({"results": "ok",
+                    "data": carsData}
+            ); 
       });
   });
 
@@ -64,7 +66,9 @@ app.get('/search', function(req, res){
         if(err){
             res.send({"status": "error" });
         }
-            res.send(carsData); 
+            res.send({"results": "ok",
+                       "data": carsData}
+); 
         });
 });
 

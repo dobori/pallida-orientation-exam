@@ -37,3 +37,8 @@ table tr td{
     padding: 1.5rem;
     border: 1px solid grey;
 }
+
+fieldset{
+    border: 0;
+    padding: 2rem;
+}
