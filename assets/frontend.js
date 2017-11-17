@@ -37,8 +37,7 @@ const renderCars = function(carsData) {
     buttons.forEach(function(element){
         element.addEventListener('click', function(){
             filteringBrand =  element.value;
-            getBrandData(element.value);
-            table.innerHTML='';
+            getBrandData(element.value, renderCars);
         });   
     });
 }
