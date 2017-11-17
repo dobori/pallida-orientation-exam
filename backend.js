@@ -1,24 +1,24 @@
 'use strict';
 
-const mysql = require('mysql');
-const express = require('express');
+const mysql = require("mysql");
+const express = require("express");
 
 const app = express();
 app.use(express.json());
-app.use('/assets', express.static('./assets'));
+app.use("/assets", express.static("./assets"));
 
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'car'
+  host: "localhost",
+  user: "root",
+  password: "root",
+  database: "car"
 });
 
 connection.connect( (error) => {
   if (error) {
     console.log(error);
   } else {
-    console.log('mysql server connected');
+    console.log("mysql server connected");
   }
 });
 
@@ -31,15 +31,16 @@ connection.connect( (error) => {
 //   { "plate": "CICA-01", "car_brand": "Pontiac", "car_model": "Grand Am", "color": "Aquamarine", "year": 1991 }
 // ]
 
-app.get('/', function(req, res){
+app.get("/", function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
 
-app.get('/search', function(req, res){
-  
+app.get("/search", function(req, res){
     if (!req.query.plate){ 
       var addToSelect= "";
+    } else if (/[^a-zA-Z0-9\-\/]/.test(req.query.plate)) {
+          res.send({ "result": "error", "message": "invalid input" });
     } else {
       addToSelect= "WHERE plate = \'" + req.query.plate + "\'";
       };
@@ -56,7 +57,7 @@ app.get('/search', function(req, res){
       });
   });
 
-  app.get('/search/:brand', function(req, res){
+  app.get("/search/:brand", function(req, res){
     
     var brand = req.params.brand;
     console.log({"brand":brand})
